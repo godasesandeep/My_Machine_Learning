@@ -1,0 +1,64 @@
+-->Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python
+-->used for plotting various plots in Python like scatter plot, bar charts, pie charts, line plots, histograms, 3-D plots and many more
+ -->Matplotlib is a library in Python and it is a numerical-mathematical extension for the NumPy library. 
+ -->Pyplot is a state-based interface to a Matplotlib module which provides a MATLAB-like interface.
+
+
+ ****  matplotlib.pyplot.scatter()  ****
+ -->Scatter plots are widely used to represent relation among variables and how change in one affects the other
+ -->Syntax
+
+ matplotlib.pyplot.scatter(x_axis_data, y_axis_data, s=None, c=None, marker=None, cmap=None,
+                             vmin=None, vmax=None, alpha=None, linewidths=None, edgecolors=None) 
+
+
+    x_axis_data- An array containing x-axis data
+    y_axis_data- An array containing y-axis data
+    s- marker size (can be scalar or array of size equal to size of x or y)
+    c- color of sequence of colors for markers
+    marker- marker style
+    cmap- cmap name
+    linewidths- width of marker border
+    edgecolor- marker border color
+    alpha- blending value, between 0 (transparent) and 1 (opaque)
+
+**** Matplotlib subplots() Syntax  ****
+
+-->The subplots() function in the Pyplot module of the Matplotlib library is used to create a figure
+     and a set of subplots.
+
+    Syntax: matplotlib.pyplot.subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze=True, subplot_kw=None, gridspec_kw=None, **fig_kw) 
+
+    Parameters: This method accept the following parameters that are described below:
+
+        nrows, ncols : These parameter are the number of rows/columns of the subplot grid.
+        sharex, sharey : These parameter controls sharing of properties among x (sharex) or y (sharey) axes.
+        squeeze : This parameter is an optional parameter and it contains boolean value with default as True.
+        num: This parameter is the pyplot.figure keyword that sets the figure number or label.
+        subplot_kwd: This parameter is the dict with keywords passed to the add_subplot call used to create each subplot.
+        gridspec_kw: This parameter is the dict with keywords passed to the GridSpec constructor used to create the grid the subplots are placed on.
+
+    Returns: This method return the following values.
+
+        fig : This method return the figure layout.
+        ax : This method return the axes.Axes object or array of Axes objects.
+
+-->In this example, we will plot two plots that share the y-axis. 
+The nrows and ncols parameters are set to 1 and 2 respectively, which means the plot will have 1 row and 2 columns or 2 subplots.
+ We can access these subplots using the index [0] and [1].
+fig, ax = plt.subplots(nrows=1, ncols=2)
+ax[0].plot(x, y1)
+ax[1].plot(x, y2)
+ax[0].set_title('Simple plot with sin(x)')
+
+-->nrows and ncols to 2. 
+This means that the plot is divided into 2 rows and 2 columns which gives us a total of 4 subplots.
+ We can access these plots using the index.
+fig, ax = plt.subplots(nrows=2, ncols=2)
+ax[0, 0].plot(x, y1, c='red')
+ax[0, 1].plot(x, y2, c='red')
+ax[1, 0].plot(x, y3, c='blue')
+ax[1, 1].plot(x, y3, c='blue')
+ 
+ax[0, 0].set_title('Simple plot with sin(x)')
+ax[0, 1].set_title('Simple plot with sin(x**2)')
